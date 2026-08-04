@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print(character_color, "reach finish")
+		print(character_color, " reach finish")
 		# Nonaktifkan collision agar tidak ter-trigger berulang kali
 		monitoring = false
 		# Pancarkan sinyal bahwa level warna ini telah selesai

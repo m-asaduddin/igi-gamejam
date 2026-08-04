@@ -6,7 +6,8 @@ extends Control
 @onready var vp_yellow = $GridContainer/SubViewportContainer_yellow/SubViewport_yellow
 
 # Preload Scene Pertemuan Final (Fasa 2)
-var world_final_scene = preload("res://levels/main_level.tscn")
+var world_purple_scene = preload("res://levels/purple_level.tscn")
+var world_orange_scene = preload("res://levels/orange_level.tscn")
 
 # Counter untuk mencatat berapa karakter yang sudah menyentuh Area2D finish
 var completed_characters: Array = []
@@ -31,7 +32,7 @@ func _on_character_finished(character_color: String) -> void:
 	if not completed_characters.has(character_color):
 		completed_characters.append(character_color)
 		print("Karakter ", character_color, " telah mencapai garis finish! Total: ", completed_characters.size())
-	
+
 	# Jika keempatnya sudah menyentuh Area2D finish masing-masing, lakukan transisi!
 	if completed_characters.size() >= 4:
 		transition_to_final_world()
@@ -47,12 +48,30 @@ func transition_to_final_world() -> void:
 	for child in vp_yellow.get_children():
 		child.queue_free()
 
-	# 2. Instantiate scene world_final ke Viewport 1 (Viewport Biru)
-	var final_world_instance = world_final_scene.instantiate()
-	vp_blue.add_child(final_world_instance)
+	# 2. Pasang level purple (red + blue) di Viewport merah & biru dengan world yang sama
+	var purple_instance = world_purple_scene.instantiate()
+	vp_red.add_child(purple_instance)
+	vp_blue.world_2d = vp_red.world_2d
+	_setup_merge_camera(purple_instance, ["PlayerRed", "PlayerBlue"], [vp_red, vp_blue])
 
-	# 3. Bagikan World2D dari Viewport 1 ke Viewport 2, 3, dan 4
-	# (Menjadikan keempat viewport melihat satu dunia fisik yang sama di Fasa 2)
-	vp_red.world_2d = vp_blue.world_2d
-	vp_green.world_2d = vp_blue.world_2d
-	vp_yellow.world_2d = vp_blue.world_2d
+	# 3. Pasang level orange (yellow + green) di Viewport kuning & hijau dengan world yang sama
+	var orange_instance = world_orange_scene.instantiate()
+	vp_yellow.add_child(orange_instance)
+	vp_green.world_2d = vp_yellow.world_2d
+	_setup_merge_camera(orange_instance, ["PlayerYellow", "PlayerGreen"], [vp_yellow, vp_green])
+
+func _setup_merge_camera(world_instance: Node2D, player_names: Array, target_viewports: Array) -> void:
+	# Nonaktifkan kamera default pada masing-masing pemain
+	var targets: Array = []
+	for name in player_names:
+		var player = world_instance.get_node_or_null(name)
+		if player != null:
+			var cam: Camera2D = player.get_node_or_null("PlayerBase/Camera2D")
+			if cam != null:
+				cam.enabled = false
+			targets.append(player)
+
+	# Tambahkan MergeCamera untuk mengikuti kedua pemain sekaligus
+	var merge_cam = MergeCamera.new()
+	world_instance.add_child(merge_cam)
+	merge_cam.setup(targets, target_viewports)

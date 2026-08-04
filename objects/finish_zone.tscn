@@ -6,6 +6,7 @@
 size = Vector2(38, 47)
 
 [node name="FinishZone" type="Area2D" unique_id=1082177431]
+collision_mask = 3840
 script = ExtResource("1_pf03i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166830367]
