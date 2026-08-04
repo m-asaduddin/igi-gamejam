@@ -4,11 +4,18 @@ extends CharacterBody2D
 const JUMP_VELOCITY = -500.0
 
 @export var speed = 500
+@export var direction = 1
+@export var spriteTexture: Texture2D
+
 var is_in_knockback: bool = false
+
+func _ready() -> void:
+	var sprite = $CollisionShape2D/Sprite2D
+	sprite.texture = spriteTexture
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "ui_up", "ui_down")
-	velocity.x = input_direction.x * speed
+	velocity.x = input_direction.x * speed * direction
 
 func _physics_process(delta):
 	# Apply gravity

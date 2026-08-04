@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://due247duhickw"]
+
+[ext_resource type="PackedScene" uid="uid://bt87vyxhrnwh8" path="res://player/player_base.tscn" id="1_7rqfr"]
+[ext_resource type="Texture2D" uid="uid://br0nmwln25hlg" path="res://player/texture/biru.png" id="2_rmytf"]
+
+[node name="PlayerBlue" type="Node2D" unique_id=996593276]
+
+[node name="PlayerBase" parent="." unique_id=299667107 instance=ExtResource("1_7rqfr")]
+collision_layer = 514
+collision_mask = 45
+spriteTexture = ExtResource("2_rmytf")

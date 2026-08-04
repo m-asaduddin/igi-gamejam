@@ -58,6 +58,14 @@ jump={
 3d_physics/layer_3="damage dealer"
 2d_physics/layer_4="void"
 3d_physics/layer_4="void"
+2d_physics/layer_5="ground red"
+2d_physics/layer_6="ground blue"
+2d_physics/layer_7="ground yellow"
+2d_physics/layer_8="ground green"
+2d_physics/layer_9="player red"
+2d_physics/layer_10="player blue"
+2d_physics/layer_11="player yellow"
+2d_physics/layer_12="player green"
 
 [physics]
 
