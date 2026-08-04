@@ -87,6 +87,9 @@ texture = ExtResource("2_b1y6n")
 [node name="PlayerGreen" parent="." unique_id=996593276 instance=ExtResource("4_krkjs")]
 position = Vector2(51, 212)
 
+[node name="PlayerBase" parent="PlayerGreen" index="0" unique_id=299667107]
+direction = 1
+
 [node name="Void" parent="." unique_id=599475261 instance=ExtResource("5_hxhe2")]
 position = Vector2(291, 429)
 scale = Vector2(0.75532687, 0.82831687)
@@ -95,3 +98,5 @@ collision_mask = 256
 [node name="FinishZone" parent="." unique_id=1082177431 instance=ExtResource("4_o4ofu")]
 position = Vector2(1731, 196)
 character_color = "green"
+
+[editable path="PlayerGreen"]
