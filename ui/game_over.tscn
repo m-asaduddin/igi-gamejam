@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cwrm0cd2tirt3"]
+
+[ext_resource type="Script" uid="uid://bsw8tjo7dukyh" path="res://ui/game_over.gd" id="1_oo8kp"]
+
+[node name="Control" type="Control" unique_id=525527691]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oo8kp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=637641348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+color = Color(0.44401497, 0.44401494, 0.44401494, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1856681831]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.492
+anchor_right = 0.504
+anchor_bottom = 0.492
+offset_left = -62.200012
+offset_top = -26.200012
+offset_right = 61.799988
+offset_bottom = 26.799988
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="." unique_id=51075385]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.564
+anchor_right = 0.50600004
+anchor_bottom = 0.564
+offset_left = -78.80005
+offset_top = -15.399994
+offset_right = 78.19995
+offset_bottom = 15.600006
+text = "Back to Main Menu"
+
+[connection signal="button_up" from="MainMenuButton" to="." method="_on_main_menu_button_button_up"]

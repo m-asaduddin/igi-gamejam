@@ -1,16 +1,38 @@
 [gd_scene format=3 uid="uid://d04ceo3w4cqei"]
 
+[ext_resource type="Texture2D" uid="uid://badh8676oltrg" path="res://icon.svg" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://bt87vyxhrnwh8" path="res://player/player_scene.tscn" id="2_pw63i"]
+[ext_resource type="PackedScene" uid="uid://bxv35tblrcaou" path="res://objects/void.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://c35v66i67t1v3" path="res://objects/obstacle.tscn" id="4_pu3yx"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5811a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpktr"]
-size = Vector2(706, 45)
+size = Vector2(520, 45)
 
 [node name="MainScene" type="Node2D" unique_id=912494991]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1317963535]
-position = Vector2(569, 572)
+position = Vector2(358, 570)
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_5811a")
 
 [node name="Ground Base" type="CollisionShape2D" parent="Ground" unique_id=118495309]
-position = Vector2(0, 1)
+position = Vector2(-93, 0)
 shape = SubResource("RectangleShape2D_gpktr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=367010411]
+texture_repeat = 2
+position = Vector2(-96.49999, -2)
+scale = Vector2(4.0546875, 0.37499997)
+texture = ExtResource("1_w2twt")
+
+[node name="Main Char" parent="." unique_id=299667107 instance=ExtResource("2_pw63i")]
+position = Vector2(62.000023, 452.00003)
+slide_on_ceiling = false
+
+[node name="Void" parent="." unique_id=599475261 instance=ExtResource("3_7ykc4")]
+position = Vector2(404, 644)
+
+[node name="Obstacle" parent="." unique_id=93898738 instance=ExtResource("4_pu3yx")]
+position = Vector2(349, 509)

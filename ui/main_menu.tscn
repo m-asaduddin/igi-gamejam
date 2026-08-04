@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://byqrxqp27u8p2"]
+
+[ext_resource type="Script" uid="uid://cfkmhuoqs5top" path="res://ui/main_menu.gd" id="1_t7e0r"]
+
+[node name="MainMenu" type="Control" unique_id=432436688]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7e0r")
+
+[node name="Label" type="Label" parent="." unique_id=1820219317]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51500005
+anchor_top = 0.42900002
+anchor_right = 0.51500005
+anchor_bottom = 0.42900002
+offset_left = -44.00003
+offset_top = -11.400024
+offset_right = 43.99997
+offset_bottom = 11.599976
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=615207081]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.522
+anchor_top = 0.572
+anchor_right = 0.522
+anchor_bottom = 0.572
+offset_left = -100.600006
+offset_top = -25.200012
+offset_right = 101.399994
+offset_bottom = 25.799988
+text = "Start"
+
+[connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]

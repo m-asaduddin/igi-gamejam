@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bxv35tblrcaou"]
+
+[ext_resource type="Script" uid="uid://dg627thxl5oj8" path="res://objects/void.gd" id="1_cjyih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5811a"]
+size = Vector2(798, 20)
+
+[node name="Void" type="Area2D" unique_id=599475261]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_cjyih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1190242981]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_5811a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
