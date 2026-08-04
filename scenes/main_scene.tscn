@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d04ceo3w4cqei"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5811a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpktr"]
+size = Vector2(706, 45)
+
+[node name="MainScene" type="Node2D" unique_id=912494991]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1317963535]
+position = Vector2(569, 572)
+physics_material_override = SubResource("PhysicsMaterial_5811a")
+
+[node name="Ground Base" type="CollisionShape2D" parent="Ground" unique_id=118495309]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gpktr")
