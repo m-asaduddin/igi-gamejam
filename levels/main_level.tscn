@@ -4,15 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://due247duhickw" path="res://player/player_blue.tscn" id="3_55n5f"]
 [ext_resource type="PackedScene" uid="uid://datp7xbctdpb6" path="res://player/player_red.tscn" id="4_wg11f"]
 [ext_resource type="PackedScene" uid="uid://bxv35tblrcaou" path="res://objects/void.tscn" id="5_wg11f"]
+[ext_resource type="PackedScene" uid="uid://ducxuc7kfs35t" path="res://player/player_green.tscn" id="5_yb8kn"]
+[ext_resource type="PackedScene" uid="uid://bxqyl1j8qf1ag" path="res://player/player_yellow.tscn" id="6_43k3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilwad"]
 size = Vector2(888, 101.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldao0"]
-size = Vector2(438.5, 101.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vhbo"]
 size = Vector2(789, 101.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldao0"]
+size = Vector2(438.5, 101.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55n5f"]
 size = Vector2(1168, 101.5)
@@ -37,21 +39,6 @@ position = Vector2(46.49996, 0.9999695)
 scale = Vector2(7.023437, 0.8281248)
 texture = ExtResource("2_0vhbo")
 
-[node name="Ground3" type="StaticBody2D" parent="Ground" unique_id=207494562]
-position = Vector2(273, 620)
-collision_layer = 32
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground3" unique_id=1933165647]
-position = Vector2(3.75, -2.75)
-shape = SubResource("RectangleShape2D_ldao0")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground3" unique_id=201581700]
-texture_repeat = 2
-position = Vector2(4.9999847, -3.0000305)
-scale = Vector2(3.4843748, 0.8281248)
-texture = ExtResource("2_0vhbo")
-
 [node name="Ground2" type="StaticBody2D" parent="Ground" unique_id=2067236972]
 position = Vector2(1521, 236)
 collision_layer = 16
@@ -66,51 +53,6 @@ shape = SubResource("RectangleShape2D_0vhbo")
 texture_repeat = 2
 position = Vector2(-2.499878, 3.9999695)
 scale = Vector2(6.2734385, 0.8281248)
-texture = ExtResource("2_0vhbo")
-
-[node name="Ground4" type="StaticBody2D" parent="Ground" unique_id=46968453]
-position = Vector2(1225, 609)
-collision_layer = 32
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground4" unique_id=450545695]
-position = Vector2(0.99993896, 3.25)
-shape = SubResource("RectangleShape2D_55n5f")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground4" unique_id=1088283662]
-texture_repeat = 2
-position = Vector2(3.000061, 2.9999695)
-scale = Vector2(9.265626, 0.8281248)
-texture = ExtResource("2_0vhbo")
-
-[node name="Ground6" type="StaticBody2D" parent="Ground" unique_id=275534206]
-position = Vector2(2503, 446)
-collision_layer = 48
-collision_mask = 768
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground6" unique_id=1529705416]
-position = Vector2(3.75, -2.75)
-shape = SubResource("RectangleShape2D_ldao0")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground6" unique_id=2078322495]
-texture_repeat = 2
-position = Vector2(4.9999847, -3.0000305)
-scale = Vector2(3.4843748, 0.8281248)
-texture = ExtResource("2_0vhbo")
-
-[node name="Ground7" type="StaticBody2D" parent="Ground" unique_id=702605825]
-position = Vector2(2054, 555)
-collision_layer = 32
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground7" unique_id=1572891776]
-position = Vector2(3.75, -2.75)
-shape = SubResource("RectangleShape2D_ldao0")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground7" unique_id=787031036]
-texture_repeat = 2
-position = Vector2(4.9999847, -3.0000305)
-scale = Vector2(3.4843748, 0.8281248)
 texture = ExtResource("2_0vhbo")
 
 [node name="Ground5" type="StaticBody2D" parent="Ground" unique_id=1218994542]
@@ -128,11 +70,71 @@ position = Vector2(4.9999847, -3.0000305)
 scale = Vector2(3.4843748, 0.8281248)
 texture = ExtResource("2_0vhbo")
 
+[node name="Ground6" type="StaticBody2D" parent="Ground" unique_id=275534206]
+position = Vector2(2503, 446)
+collision_layer = 48
+collision_mask = 768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground6" unique_id=1529705416]
+position = Vector2(3.75, -2.75)
+shape = SubResource("RectangleShape2D_ldao0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground6" unique_id=2078322495]
+texture_repeat = 2
+position = Vector2(4.9999847, -3.0000305)
+scale = Vector2(3.4843748, 0.8281248)
+texture = ExtResource("2_0vhbo")
+
+[node name="Ground3" type="StaticBody2D" parent="Ground" unique_id=207494562]
+position = Vector2(2979, 396)
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground3" unique_id=1933165647]
+position = Vector2(3.75, -2.75)
+shape = SubResource("RectangleShape2D_ldao0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground3" unique_id=201581700]
+texture_repeat = 2
+position = Vector2(4.9999847, -3.0000305)
+scale = Vector2(3.4843748, 0.8281248)
+texture = ExtResource("2_0vhbo")
+
+[node name="Ground4" type="StaticBody2D" parent="Ground" unique_id=46968453]
+position = Vector2(3931, 385)
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground4" unique_id=450545695]
+position = Vector2(0.99993896, 3.25)
+shape = SubResource("RectangleShape2D_55n5f")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground4" unique_id=1088283662]
+texture_repeat = 2
+position = Vector2(3.000061, 2.9999695)
+scale = Vector2(9.265626, 0.8281248)
+texture = ExtResource("2_0vhbo")
+
+[node name="Ground7" type="StaticBody2D" parent="Ground" unique_id=702605825]
+position = Vector2(4760, 331)
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Ground7" unique_id=1572891776]
+position = Vector2(3.75, -2.75)
+shape = SubResource("RectangleShape2D_ldao0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground/Ground7" unique_id=787031036]
+texture_repeat = 2
+position = Vector2(4.9999847, -3.0000305)
+scale = Vector2(3.4843748, 0.8281248)
+texture = ExtResource("2_0vhbo")
+
 [node name="PlayerRed" parent="." unique_id=996593276 instance=ExtResource("4_wg11f")]
 position = Vector2(149, 111)
 
 [node name="PlayerBlue" parent="." unique_id=1416441706 instance=ExtResource("3_55n5f")]
-position = Vector2(129, 466)
+position = Vector2(359, 104)
 
 [node name="Void" parent="." unique_id=599475261 instance=ExtResource("5_wg11f")]
 position = Vector2(1041, 278)
@@ -142,3 +144,9 @@ collision_mask = 256
 position = Vector2(1688.0001, 706)
 scale = Vector2(3.2399993, 1)
 collision_mask = 770
+
+[node name="PlayerGreen" parent="." unique_id=1458599456 instance=ExtResource("5_yb8kn")]
+position = Vector2(4770, 141)
+
+[node name="PlayerYellow" parent="." unique_id=390970845 instance=ExtResource("6_43k3a")]
+position = Vector2(4582, 150)

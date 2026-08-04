@@ -94,5 +94,7 @@ render_target_update_mode = 4
 
 [editable path="GridContainer/SubViewportContainer_red/SubViewport_red/RedLevel"]
 [editable path="GridContainer/SubViewportContainer_yellow/SubViewport_yellow/YellowLevel"]
+[editable path="GridContainer/SubViewportContainer_yellow/SubViewport_yellow/YellowLevel/PlayerYellow"]
 [editable path="GridContainer/SubViewportContainer_blue/SubViewport_blue/BlueLevel"]
 [editable path="GridContainer/SubViewportContainer_green/SubViewport_green/GreenLevel"]
+[editable path="GridContainer/SubViewportContainer_green/SubViewport_green/GreenLevel/PlayerGreen"]
