@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bxqyl1j8qf1ag"]
+
+[ext_resource type="PackedScene" uid="uid://bt87vyxhrnwh8" path="res://player/player_base.tscn" id="1_im5af"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_im5af"]
+load_path = "res://.godot/imported/kuning.png-41a9c602cf6818a50bffed72a417f50c.ctex"
+
+[node name="PlayerYellow" type="Node2D" unique_id=996593276]
+
+[node name="PlayerBase" parent="." unique_id=299667107 instance=ExtResource("1_im5af")]
+collision_layer = 1026
+collision_mask = 77
+direction = -1
+spriteTexture = SubResource("CompressedTexture2D_im5af")

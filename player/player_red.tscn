@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://datp7xbctdpb6"]
+
+[ext_resource type="PackedScene" uid="uid://bt87vyxhrnwh8" path="res://player/player_base.tscn" id="1_qqdxy"]
+[ext_resource type="Texture2D" uid="uid://dhp0o6w80ymp1" path="res://player/texture/merah.png" id="2_fc4lv"]
+
+[node name="PlayerRed" type="Node2D" unique_id=996593276]
+
+[node name="PlayerBase" parent="." unique_id=299667107 instance=ExtResource("1_qqdxy")]
+collision_layer = 258
+collision_mask = 29
+spriteTexture = ExtResource("2_fc4lv")

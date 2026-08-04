@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dqcbs7of8qa75"]
+
+[ext_resource type="Script" uid="uid://cuk202l4sc3xs" path="res://ui/main_screen.gd" id="1_08ejt"]
+[ext_resource type="PackedScene" uid="uid://ccn5fd7hxwd56" path="res://levels/red_level.tscn" id="2_og05u"]
+[ext_resource type="PackedScene" uid="uid://dfnpxqnm54pre" path="res://levels/yellow_level.tscn" id="3_fkp2a"]
+[ext_resource type="PackedScene" uid="uid://6u6gevlc8au3" path="res://levels/blue_level.tscn" id="4_xns2g"]
+[ext_resource type="PackedScene" uid="uid://b6h3ntoaqoehj" path="res://levels/green_level.tscn" id="5_5ihfk"]
+
+[node name="MainScreen" type="Control" unique_id=249488647]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08ejt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=673256947]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1519595423]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.0
+offset_top = -292.0
+offset_right = 392.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="SubViewportContainer_red" type="SubViewportContainer" parent="GridContainer" unique_id=1480661183]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport_red" type="SubViewport" parent="GridContainer/SubViewportContainer_red" unique_id=1385034869]
+handle_input_locally = false
+size = Vector2i(390, 290)
+render_target_update_mode = 4
+
+[node name="RedLevel" parent="GridContainer/SubViewportContainer_red/SubViewport_red" unique_id=277119791 instance=ExtResource("2_og05u")]
+
+[node name="SubViewportContainer_yellow" type="SubViewportContainer" parent="GridContainer" unique_id=1383432393]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport_yellow" type="SubViewport" parent="GridContainer/SubViewportContainer_yellow" unique_id=1110566391]
+handle_input_locally = false
+size = Vector2i(390, 290)
+render_target_update_mode = 4
+
+[node name="YellowLevel" parent="GridContainer/SubViewportContainer_yellow/SubViewport_yellow" unique_id=1304347352 instance=ExtResource("3_fkp2a")]
+
+[node name="SubViewportContainer_blue" type="SubViewportContainer" parent="GridContainer" unique_id=901882335]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport_blue" type="SubViewport" parent="GridContainer/SubViewportContainer_blue" unique_id=1507037078]
+handle_input_locally = false
+size = Vector2i(390, 290)
+render_target_update_mode = 4
+
+[node name="BlueLevel" parent="GridContainer/SubViewportContainer_blue/SubViewport_blue" unique_id=880279000 instance=ExtResource("4_xns2g")]
+
+[node name="SubViewportContainer_green" type="SubViewportContainer" parent="GridContainer" unique_id=204254608]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport_green" type="SubViewport" parent="GridContainer/SubViewportContainer_green" unique_id=1054793460]
+handle_input_locally = false
+size = Vector2i(390, 290)
+render_target_update_mode = 4
+
+[node name="GreenLevel" parent="GridContainer/SubViewportContainer_green/SubViewport_green" unique_id=474335894 instance=ExtResource("5_5ihfk")]
+
+[connection signal="level_completed" from="GridContainer/SubViewportContainer_red/SubViewport_red/RedLevel/FinishZone" to="." method="_on_character_finished"]
+[connection signal="level_completed" from="GridContainer/SubViewportContainer_yellow/SubViewport_yellow/YellowLevel/FinishZone" to="." method="_on_character_finished"]
+[connection signal="level_completed" from="GridContainer/SubViewportContainer_blue/SubViewport_blue/BlueLevel/FinishZone" to="." method="_on_character_finished"]
+[connection signal="level_completed" from="GridContainer/SubViewportContainer_green/SubViewport_green/GreenLevel/FinishZone" to="." method="_on_character_finished"]
+
+[editable path="GridContainer/SubViewportContainer_red/SubViewport_red/RedLevel"]
+[editable path="GridContainer/SubViewportContainer_yellow/SubViewport_yellow/YellowLevel"]
+[editable path="GridContainer/SubViewportContainer_blue/SubViewport_blue/BlueLevel"]
+[editable path="GridContainer/SubViewportContainer_green/SubViewport_green/GreenLevel"]
